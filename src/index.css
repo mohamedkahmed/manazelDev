@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Manazil Developments Design System - Professional Real Estate Theme */
+
+@layer base {
+  :root {
+    /* Official Manazel Brand Colors */
+    --background: 45 68% 93%; /* #fef3d5 - Official cream */
+    --foreground: 76 16% 20%; /* #3d4d33 - Official green */
+
+    --card: 45 68% 96%;
+    --card-foreground: 76 16% 20%;
+
+    --popover: 45 68% 96%;
+    --popover-foreground: 76 16% 20%;
+
+    --primary: 76 16% 20%; /* #3d4d33 - Official brand green */
+    --primary-foreground: 45 68% 93%;
+
+    --secondary: 45 68% 93%; /* #fef3d5 - Official cream */
+    --secondary-foreground: 76 16% 20%;
+
+    --muted: 45 50% 88%;
+    --muted-foreground: 76 12% 40%;
+
+    --accent: 42 87% 75%; /* Enhanced gold accent */
+    --accent-foreground: 76 16% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 68% 93%;
+
+    --border: 45 40% 82%;
+    --input: 45 40% 85%;
+    --ring: 76 16% 20%;
+
+    /* Official Brand Variables */
+    --brand-green: 76 16% 20%;      /* #3d4d33 */
+    --brand-cream: 45 68% 93%;      /* #fef3d5 */
+    --brand-gold: 42 87% 75%;       /* Enhanced gold */
+    --brand-dark-green: 76 20% 15%; /* Darker variant */
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-green)), hsl(var(--brand-dark-green)));
+    --gradient-section: linear-gradient(180deg, hsl(var(--brand-cream)), hsl(44 20% 90%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(44 20% 92%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--brand-green) / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(var(--brand-green) / 0.08);
+    --shadow-glow: 0 0 40px hsl(var(--brand-gold) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-video {
+    @apply absolute inset-0 w-full h-full object-cover;
+    filter: brightness(0.4);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(135deg, hsl(var(--brand-green) / 0.8), hsl(var(--brand-dark-green) / 0.9));
+  }
+
+  /* Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .animate-scale-hover {
+    transition: var(--transition-spring);
+  }
+
+  .animate-scale-hover:hover {
+    transform: scale(1.05);
+  }
+
+  /* Scroll Animation Observer Classes */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Custom Button Variants */
+  .btn-hero {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 rounded-lg font-semibold text-lg;
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hero:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-hero {
+    @apply border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 rounded-lg font-semibold text-lg;
+    transition: var(--transition-smooth);
+  }
+
+  /* Property Card Styles */
+  .property-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+  }
+
+  .property-card:hover {
+    box-shadow: var(--shadow-elegant);
+    transform: translateY(-8px);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
