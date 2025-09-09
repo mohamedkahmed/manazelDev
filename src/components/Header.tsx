@@ -89,7 +89,7 @@ const Header = () => {
               isScrolled || !isHomePage ? 'text-muted-foreground' : 'text-white/80'
             }`}>
               <Phone className="w-4 h-4" />
-              <span>+20 100 123 4566</span>
+              <span>+20 1154792430</span>
             </div>
             <div className={`flex items-center space-x-2 text-sm transition-colors ${
               isScrolled || !isHomePage ? 'text-muted-foreground' : 'text-white/80'
